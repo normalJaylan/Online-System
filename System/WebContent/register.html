@@ -1,0 +1,50 @@
+<html>
+
+<html lang="en" class="no-js">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>心理在线咨询系统</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="assets/js/html5.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <h1>注册-心理在线咨询系统</h1>
+            <form action="registerCheck.jsp" method="post"><!-- 这里的action是注册页面的jsp -->
+                <input type="text" name="name" class="username" placeholder="输入新用户名">
+                <input type="password" name="pwd" class="password" placeholder="输入新密码">
+                <input type="text" name="age" class="age" placeholder="年龄">
+                <input type="text" name="telephone" class="phone" placeholder="电话">
+                <input type="text" name="education" class="school" placeholder="学历">
+                <button type="submit" class="submit_button submit_login">提交</button>
+                <button id="back_login" class="submit_button submit_a">返回首页</button>
+                <input type="radio" class="select_id" name="Identity" value="Painter" checked="checked"/> 咨询者
+                <input type="radio" class="select_id" name="Identity" value="Docter" /> 医生
+                <input type="radio" class="select_id" name="Identity" value="Mannager" /> 管理员
+                <div class="error"><span>+</span></div>
+            </form>
+        </div>
+        <div id="into"></div>
+		<img class="bg_img" src="assets/img/3.jpg" />
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.8.2.min.js" ></script>
+        <script src="assets/js/registerCheckName.js" ></script>
+        <script src="assets/js/register.js" ></script>
+
+    </body>
+</html>
