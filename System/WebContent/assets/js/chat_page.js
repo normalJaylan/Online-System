@@ -1,11 +1,13 @@
-window.setInterval("showContent(docter_name,patient_name);",1000);
+/*window.setInterval("showContent();",1000);*/
 
 
-function showContent(docter_name,patient_name){
+function showContent(){
+
 	$.ajax
 	({
 		type : 'GET',
-		url : 'xxx.jsp?docter_name=' +docter_name+ '&&patient_name=' + patient_name,
+//		url : 'xxx.jsp?docter_name=' +docter_name+ '&patient_name=' + patient_name,
+		url : 'Message?action=delete',
 		success:function(data)
 		{
 			var chat_content = JSON.parse(data);
@@ -38,23 +40,30 @@ function showContent(docter_name,patient_name){
    }
 
 
+function a(){
+	$.ajax({
+		type: 'get',
+		url:'Message?action=delete'
+	});
+}
+
 $(document).ready(function() {
     $('#chat_box>footer>form').submit(function(){
+    	console.log(1);
         var new_chat_content = $(this).find('#submit_text').val();
         var new_chat_content_div = '<div class=\"box_left chat_tr\">\
 									        <img class=\"box_left\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\"/>\
 										    <div>\
-										        <p class=\"chat_nick\">'+ name +'</p>\
+										        <p class=\"chat_nick\">'+name+'</p>\
 											    <p class=\"chat_content arrow_left\">'+new_chat_content+'</p>\
 									        </div>\
 									  </div>';
-		$('#chat_cotent').append(new_chat_content_div);
-		document.getElementById('chat_conent').scrollTop = document.getElementById('chat_conent').scrollHeight*2;							  
+        console.log(new_chat_content_div);
+		$('#chat_content').append(new_chat_content_div);
+		document.getElementById('chat_content').scrollTop = document.getElementById('chat_content').scrollHeight*2;	
         if(new_chat_content == '') {
             return false;
-        }
-        
-		
+        }        setTimeout("document.getElementById('submit_text').value = ''",300);
     });
 
      $('form#submit_report').submit(function(){
@@ -63,11 +72,13 @@ $(document).ready(function() {
          	return false;
          }
      });
+     
+ //    a();
 
 
 
 	});
-}
+
 
 
 

@@ -25,7 +25,7 @@
 <img src="assets/img/chat_bg.jpg" style="height: 100%;width: 100%;position: fixed;z-index: -3;">
 <div  id="chat_box">
 	<header id="chat_header"><h1><%=patientName %></h1></header><!-- 这个是病人的名字 -->
-	<div id="chat_conent">
+	<div id="chat_content">
 	    <div class="box_left chat_tr">
 	        <img class="box_left" src="assets/img/chat_img.png" style="height: 50px;width: 50px;"/>
 		    <div>
@@ -41,13 +41,15 @@
 	        </div>
 	    </div>
 	</div>
+	
 	<footer>
-	  <form action="" method="post">
-	    <input type="text" name="submit_text" id="submit_text" />
+	  <form action="Message?action=write&profession=doctor&name=<%=doctorName %>" method="post">
+	    <input type="text" name="context" id="submit_text" />
 	    <button type="submit" id="submit_button" class="submit_button">发送</button>
 	  </form>
 	</footer>
 </div>
+
 <div id="chat_header" style=" border-radius: 12px 12px 12px 12px;"><h1>填写对<%=patientName %>的报告</h1></div>
 
 <form id="submit_report" action="testRecord.jsp?doctorName=<%=doctorName %>&patientName=<%=patientName %>" method="post">
