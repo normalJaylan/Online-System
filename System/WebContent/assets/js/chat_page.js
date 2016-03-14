@@ -1,24 +1,25 @@
-/*window.setInterval("showContent();",1000);*/
-
+window.setInterval("showContent();",1000);
+window.setInterval("deleteMessage();",20000);
 
 function showContent(){
 
 	$.ajax
 	({
 		type : 'GET',
-//		url : 'xxx.jsp?docter_name=' +docter_name+ '&patient_name=' + patient_name,
-		url : 'Message?action=delete',
+		url : 'Message?action=read',
 		success:function(data)
-		{
+		{	
 			var chat_content = JSON.parse(data);
+			
 			var chat_content_div = '';
 			for(var i in chat_content){
-				if(chat_content[i]['profession'] === 'docter'){
+				console.log(chat_content[i]['profession'],typeof chat_content[i]['profession']);
+				if(chat_content[i]['profession'] === 'doctor'){
 					chat_content_div += "<div class=\"box_left chat_tr\">\
 									        <img class=\"box_left\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\"/>\
 										    <div>\
 										        <p class=\"chat_nick\">"+chat_content[i]['name']+"</p>\
-											    <p class=\"chat_content arrow_left\">'+chat_content[i]['content']+'</p>\
+											    <p class=\"chat_content arrow_left\">"+chat_content[i]['context']+"</p>\
 									        </div>\
 									    </div>";
 				}
@@ -27,20 +28,22 @@ function showContent(){
 									        <img class=\"box_right\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\"/>\
 										    <div>\
 										        <p class=\"chat_nick\">'+chat_content[i]['name']+'</p>\
-											    <p class=\"chat_content arrow_right\">'+chat_content[i]['content']+'</p>\
+											    <p class=\"chat_content arrow_right\">'+chat_content[i]['context']+'</p>\
 									        </div>\
 									    </div>';
 				}
-				document.getElementById('chat_conent').innerHTML = chat_content_div;
+                
+				$("#chat_content").html("");
+				$("#chat_content").append(chat_content_div);
 			}
 		}
 	});
 
-    document.getElementById('chat_conent').scrollTop = document.getElementById('chat_conent').scrollHeight*2;
+   document.getElementById('chat_content').scrollTop = document.getElementById('chat_content').scrollHeight*2;
    }
 
 
-function a(){
+function deleteMessage(){
 	$.ajax({
 		type: 'get',
 		url:'Message?action=delete'
@@ -72,12 +75,8 @@ $(document).ready(function() {
          	return false;
          }
      });
-     
- //    a();
 
-
-
-	});
+});
 
 
 

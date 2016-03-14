@@ -11,7 +11,7 @@
 
 		byte[] context = contextString.getBytes();
 		
-		String path = "E:\\Java Program\\Java Web\\System\\WebContent\\record\\";
+		String path = "E:\\GitHub\\Online-System\\System\\WebContent\\record\\";
 		
 		path = path + patientName + ".txt";
 		
@@ -50,13 +50,18 @@
 			int insert_row = insert_ps.executeUpdate();
 			insert_ps.close();
 			ps.close();
-			conn.close();
 			if(insert_row > 0) {
 				System.out.println(path);
 				System.out.println("咨询记录生成成功，病人yet属性重置成功");
 			}
 		}
 		
+		String sql_delete = "delete from chat where 1=1";
+		PreparedStatement p = conn.prepareStatement(sql_delete);
+		p.executeUpdate();
+		p.close();
+		conn.close();
 		
-	
+		session.setAttribute("name",doctorName);
+		response.sendRedirect("inter_index_evaluation.jsp");
 	%>
