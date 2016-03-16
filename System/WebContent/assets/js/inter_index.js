@@ -166,7 +166,7 @@ function downConsult(doctor_name){
 											<h3>'+patient_comment[i]['name']+'的留言</h3>\
 											<p>'+patient_comment[i]['context']+'</p>\
 											<input type=\'text\' name=\'answer_pantient\' class=\'answer_pantient\' />\
-											<input type=\'submit\' class=\'submit_answer\' value=\'回复\' onclick=\"upConsult(\''+ doctor_name +'\',\''+ patient_comment[i]['name'] +'\',this);\" />\
+											<input type=\'submit\' class=\'submit_answer\' value=\'回复\' onclick=\"upConsult(\''+ doctor_name +'\',\''+ patient_comment[i]['name'] +'\',\''+ patient_comment[i]['context'] +'\',this);\" />\
 										</li>'	
     		}
     		$(".comment_ul").append(patient_comment_li);
@@ -174,8 +174,8 @@ function downConsult(doctor_name){
     });
 }
 
-function upConsult(doctor,patient,factor){
-	console.log(doctor,patient,$(factor).prev().val());
+function upConsult(doctor,patient,chat_content,factor){
+//	console.log(doctor,patient,$(factor).prev().val());
     $.ajax({
     	type:"post",
     	url:"upConsult.jsp",
@@ -183,6 +183,7 @@ function upConsult(doctor,patient,factor){
     		doctorName:doctor,
     		patientName:patient,
     		context:$(factor).prev().val(),
+    		chat:chat_content,
     	},
     	success:function(data){
     		if(data)
