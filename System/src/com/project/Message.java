@@ -123,7 +123,7 @@ public class Message extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8";
 			Connection conn = DriverManager.getConnection(url,"root","root");
-			String sql = "delete from chat where id between 1 and 5";
+			String sql = "delete from chat where id between 1 and 3";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.executeUpdate();
 			Statement stmt = conn.createStatement();

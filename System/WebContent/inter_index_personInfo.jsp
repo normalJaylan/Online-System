@@ -47,7 +47,16 @@
 				</ul>
 			</div>
             <div id="personInfo_table">
-            </div>	
+                <img src="assets/img/chat_img.png" style="border-radius: 50%;margin-left: 30px;height: 80px;width: 80px;">
+                <label>我就是一个普通的人，但是是不一样的烟火！</label>
+	            <ul class="personInfo_table_ul">
+	            	<li>姓名：<span></span><button class="btnplayit">修改</button></li>
+	            	<li>年龄：<span></span><button class="btnplayit">修改</button></li>
+	            	<li>电话：<span></span><button class="btnplayit">修改</button></li>
+	            	<li>学历：<span></span><button class="btnplayit">修改</button></li>
+	            	<li>邮箱：<span></span><button class="btnplayit">修改</button></li>
+	            </ul>
+            </div>		
 		</div> <!-- right-->
 	</div>
 	<script src="assets/js/jquery-1.8.2.min.js" ></script>

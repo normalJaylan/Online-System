@@ -27,21 +27,16 @@
 		doctor.setEducation(rs.getString("education"));
 		doctor.setTelephone(rs.getString("telephone"));
 		doctor.setAge(rs.getInt("age"));
+		doctor.setMail(rs.getString("mail"));
 	}
-/*	
-	DoctorInfo doctor = new DoctorInfo();
-	
-	doctor.setName(rs.getString("name"));
-	doctor.setAge(rs.getInt("age"));
-	doctor.setEducation(rs.getString("education"));
-	doctor.setTelephone(rs.getString("telephone"));
-*/
+
 	JSONObject json = new JSONObject();
 	
 	json.put("name",doctor.getName());
 	json.put("age",doctor.getAge());
 	json.put("education",doctor.getEducation());
 	json.put("telephone",doctor.getTelephone());
+	json.put("mail",doctor.getMail());
 	
 	out.print(json);
 %>

@@ -68,24 +68,26 @@ function showMyClient(name){
 	 });
 
 }
+
 function showPersonInfo(name){
-    $.ajax
-	({
-		type:'POST',
-		url:'myInfo.jsp?name=' + name,
-		success:function(data)
-		{
-		   var person_data = JSON.parse(data);
-		   var person_data_p = "";
-           person_data_p = "<p>姓名："+ person_data['name'] +"</p>\
-							<p>学历："+ person_data['education'] +"</p>\
-							<p>电话："+ person_data['telephone'] +"</p>\
-							<p>年龄："+ person_data['age'] +"</p>"
-						     
-		   $("#personInfo_table").append(person_data_p);
-           $("#personInfo_table").css("display","block");
-		}
-	 });
+	 $.ajax
+		({
+			type:'POST',
+			url:'myInfo.jsp?name=' + name,
+			success:function(data)
+			{
+			   var person_data = JSON.parse(data);
+			   var person_data_span = "";
+			   $(".personInfo_table_ul li").eq(0).find("span").html(person_data['name']);
+			   $(".personInfo_table_ul li").eq(1).find("span").html(person_data['age']);
+			   $(".personInfo_table_ul li").eq(2).find("span").html(person_data['telephone']);
+			   $(".personInfo_table_ul li").eq(3).find("span").html(person_data['education']);
+			   $(".personInfo_table_ul li").eq(4).find("span").html(person_data['mail']);
+	           
+			}
+							     
+			    
+		 });
 }
 
 
@@ -192,6 +194,38 @@ function upConsult(doctor,patient,chat_content,factor){
     });
 }
 
-window.onload = function(){
-	
-}
+
+
+$(document).ready(function(){
+	var input_text = "提交";
+	var class_name = ["name","age","telephone","education","mail"];
+	$("#submit_report").submit(function(){
+		var change_domain = $("#input_about_evaluation").val();
+		if(change_report == ''){
+			return false;
+		}
+		setTimeout('window.close()',2000);
+	})
+	$(".btnplayit").on("click",function(){
+		var $new_button = $("<button class=\"btnplayit_submit\">提交<tton>")
+        $(this).prev().html("<input class=\"personInfo_input\" />");
+        $(this).parent().append($new_button);
+        $(this).remove();
+	});
+	$(".personInfo_table_ul li").on("click",".btnplayit_submit",function(){
+			var class_number = $(".personInfo_table_ul>li").index($(this).parent());
+			$.ajax({
+				type: "post",
+				url: "changeInfo.jsp",
+				data: {
+					doctor: name,
+					number: class_name[class_number],
+					changeData: $(".personInfo_input").val(),
+				},
+				success: function(){
+					location.reload();
+				}
+			});
+		});
+})
+

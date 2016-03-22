@@ -1,5 +1,5 @@
 window.setInterval("showContent();",1000);
-window.setInterval("deleteMessage();",20000);
+window.setInterval("deleteMessage();",600000);
 
 function showContent(){
 
