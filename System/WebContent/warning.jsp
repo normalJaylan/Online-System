@@ -1,7 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <html>
 <head>
 	
-	<title>Black White HTML5 Template</title>
+	<title>预警中心</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<meta charset="UTF-8">
@@ -17,12 +19,12 @@
 			<h1 class="logo-left hidden-xs margin-bottom-60">心理在线</h1>			
 			<div class="tm-left-inner-container">
 				<ul class="nav nav-stacked templatemo-nav">
-				  <li><a href="inter_index.html"><i class="fa fa-home"></i>主界面</a></li>
-				  <li><a href="advisory.html"><i class="fa fa-question"></i>咨询中心</a></li>
-				  <li><a href="recover.html"><i class="fa fa-plus-square"></i>康复中心</a></li>
-				  <li><a href="report.html"><i class="fa fa-edit"></i>报告中心</a></li>
-				  <li><a href="warning.html" class="active"><i class="fa fa-exclamation"></i>预警中心</a></li>
-				   <li><a href="announce.html"><i class="fa fa-bullhorn"></i>公告</a></li>
+				  <li><a href="inter_index.jsp"><i class="fa fa-home"></i>主界面</a></li>
+				  <li><a href="advisory.jsp"><i class="fa fa-question"></i>咨询中心</a></li>
+				  <li><a href="recover.jsp"><i class="fa fa-plus-square"></i>康复中心</a></li>
+				  <li><a href="report.jsp"><i class="fa fa-edit"></i>报告中心</a></li>
+				  <li><a href="warning.jsp" class="active"><i class="fa fa-exclamation"></i>预警中心</a></li>
+				   <li><a href="personInformation.jsp" ><i class="fa fa-bullhorn"></i>个人中心</a></li>
 				</ul>
 			</div>
 		</div> <!-- left-->

@@ -99,6 +99,7 @@ function showMyRecord(name){
 		url:'askRecord.jsp?name=' + name,
 		success:function(data)
 		{
+			alert(data);
 		   var record_data = JSON.parse(data);
 		   var record_data_table_tr = "";
 		   for(var i in record_data){
@@ -199,6 +200,18 @@ function upConsult(doctor,patient,chat_content,factor){
 $(document).ready(function(){
 	var input_text = "提交";
 	var class_name = ["name","age","telephone","education","mail"];
+	$('.my-slider').unslider({
+		dots: true, 
+	});
+	$('input').glDatePicker({
+	 showAlways: true,
+	 cssName: 'flatwhite',
+	 allowMonthSelect: false,
+	 allowYearSelect: false,
+	 
+	});
+	$("#mydate").css("display","none");
+	$(".gldp-flatwhite").css({"display":"inline-block","margin-left":"50px","margin-top":"20px","position":"relative","top":"0","left":"0"})
 	$("#submit_report").submit(function(){
 		var change_domain = $("#input_about_evaluation").val();
 		if(change_report == ''){
@@ -228,4 +241,6 @@ $(document).ready(function(){
 			});
 		});
 })
+
+
 

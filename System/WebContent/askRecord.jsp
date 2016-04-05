@@ -17,7 +17,7 @@
 		ResultSet rs = stmt.executeQuery(sql);
 		
 		List<ReportInfo> list = new ArrayList<ReportInfo>();
-		List<PatientInfo> pa = new ArrayList<PatientInfo>();
+		List<String> pa = new ArrayList<String>();
 		
 		while(rs.next() == true) {
 			
@@ -26,21 +26,20 @@
 				report.setDoctorName(doctorName);
 				report.setPatientName(rs.getString("patient"));
 				report.setPath(rs.getString("path"));
+				report.setYear(rs.getInt("year"));
+				report.setMonth(rs.getInt("month"));
+				report.setDay(rs.getInt("day"));
+				report.setHour(rs.getInt("hour"));
+				report.setMinute(rs.getInt("minute"));
 				list.add(report);
 				
 				String sqlPatient = "select * from patient where name = '" + rs.getString("patient") + "'";
 				Statement stmt2 = conn.createStatement();
 				ResultSet result = stmt2.executeQuery(sqlPatient);
 				while(result.next() == true) {
-					PatientInfo patient = new PatientInfo();
-					patient.setAge(result.getInt("age"));
-					patient.setSex(result.getString("sex"));
-					patient.setSex(result.getString("phone"));
-					patient.setProfession(result.getString("profession"));
-					patient.setPhone(result.getString("phone"));
-					patient.setRecord(result.getInt("record"));
-					patient.setTable(result.getString("table"));
-					pa.add(patient);
+					String table = result.getString("table");
+					System.out.println(table);
+					pa.add(table);
 				}
 			}
 		}
@@ -53,12 +52,12 @@
 			JSONObject js = new JSONObject();
 			js.put("name",ri.getPatientName());
 			js.put("path",ri.getPath());
-			js.put("age",pa.get(i).getAge());
-			js.put("sex",pa.get(i).getSex());
-			js.put("profession",pa.get(i).getProfession());
-			js.put("phone",pa.get(i).getPhone());
-			js.put("record",pa.get(i).getRecord());
-			js.put("table",pa.get(i).getTable());
+			js.put("year",ri.getYear());
+			js.put("month",ri.getMonth());
+			js.put("day",ri.getDay());
+			js.put("hour",ri.getHour());
+			js.put("minute",ri.getMinute());
+			js.put("table",pa.get(i));
 			json.put(js);
 			i++;
 		}
