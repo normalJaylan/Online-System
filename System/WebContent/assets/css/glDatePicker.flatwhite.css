@@ -2,6 +2,14 @@
 	display: inline-block !important;
 	font-family: 'helvetica';
 	top: 0 !important;
+	width: 400px;
+    height: 300px;
+    display: inline-block;
+    top: 29px;
+    left: 0px;
+    margin-left: 50px;
+    margin-top: 20px;
+    position: relative;
 }
 
 /* Core style for every cell */

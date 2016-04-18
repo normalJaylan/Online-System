@@ -17,7 +17,7 @@
 	Statement stmt = conn.createStatement();
 	
 	String sql = "select * from doctor where name='" + doctorName + "'";
-
+	
 	ResultSet rs = stmt.executeQuery(sql);
 	
 	DoctorInfo doctor = new DoctorInfo();

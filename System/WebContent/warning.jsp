@@ -30,7 +30,22 @@
 		</div> <!-- left-->
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg right-container">
 			<h1 class="logo-right hidden-xs margin-bottom-60">咨询系统</h1>		
-			<div class="tm-right-inner-container">	</div>
+			<table id="hor-minimalist-client" class="hor-minimalist">
+					<thead>
+					     <tr>
+							<th scope="col">姓名</th>
+							<th scope="col">年龄</th>
+							<th scope="col">性别</th>
+							<th scope="col">职业</th>
+							<th scope="col">联系方式</th>
+							<th scope="col">测评表</th>
+							<th scope="col">测评结果</th>
+						</tr>
+					</thead>
+					<tbody>
+						 
+					</tbody>
+            </table>
 		</div> <!-- right-->
 	</div>
 	<script src="assets/js/jquery-1.8.2.min.js"></script>	

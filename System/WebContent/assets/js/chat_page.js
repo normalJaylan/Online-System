@@ -13,10 +13,10 @@ function showContent(){
 			
 			var chat_content_div = '';
 			for(var i in chat_content){
-				console.log(chat_content[i]['profession'],typeof chat_content[i]['profession']);
+			/*	console.log(chat_content[i]['profession'],typeof chat_content[i]['profession']);*/
 				if(chat_content[i]['profession'] === 'doctor'){
 					chat_content_div += "<div class=\"box_left chat_tr\">\
-									        <img class=\"box_left\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\"/>\
+									        <img class=\"box_left\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\">\
 										    <div>\
 										        <p class=\"chat_nick\">"+chat_content[i]['name']+"</p>\
 											    <p class=\"chat_content arrow_left\">"+chat_content[i]['context']+"</p>\
@@ -25,21 +25,25 @@ function showContent(){
 				}
 				else{
 					chat_content_div += '<div class=\"box_right chat_tr\">\
-									        <img class=\"box_right\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\"/>\
+									        <img class=\"box_right\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\">\
 										    <div>\
 										        <p class=\"chat_nick\">'+chat_content[i]['name']+'</p>\
 											    <p class=\"chat_content arrow_right\">'+chat_content[i]['context']+'</p>\
 									        </div>\
 									    </div>';
 				}
-                
+				
+			}
+			
+            if(chat_content_div.replace(/>\s+</g,"><") != $("#chat_content").html().replace(/>\s+</g,"><")){
+            	console.log("1");
 				$("#chat_content").html("");
 				$("#chat_content").append(chat_content_div);
-			}
+            }
 		}
 	});
 
-   document.getElementById('chat_content').scrollTop = document.getElementById('chat_content').scrollHeight*2;
+   
    }
 
 
@@ -52,7 +56,7 @@ function deleteMessage(){
 
 $(document).ready(function() {
     $('#chat_box>footer>form').submit(function(){
-    	console.log(1);
+    	
         var new_chat_content = $(this).find('#submit_text').val();
         var new_chat_content_div = '<div class=\"box_left chat_tr\">\
 									        <img class=\"box_left\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\"/>\
@@ -61,7 +65,7 @@ $(document).ready(function() {
 											    <p class=\"chat_content arrow_left\">'+new_chat_content+'</p>\
 									        </div>\
 									  </div>';
-        console.log(new_chat_content_div);
+      
 		$('#chat_content').append(new_chat_content_div);
 		document.getElementById('chat_content').scrollTop = document.getElementById('chat_content').scrollHeight*2;	
         if(new_chat_content == '') {

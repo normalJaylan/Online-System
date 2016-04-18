@@ -46,62 +46,7 @@
 			</div>
 			<div class="main_record">
 				<ul class="cbp_tmtimeline">
-					 <li>
-						<time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>4/10/13</span> <span>18:30</span></time>
-						<div class="cbp_tmicon cbp_tmicon-phone"></div>
-						<div class="cbp_tmlabel">
-							<h2>Ricebean black-eyed pea</h2>
-							<p>sxdfsdf.</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-1112:04"><span>4/11/13</span> <span>12:04</span></time>
-						<div class="cbp_tmicon cbp_tmicon-screen"></div>
-						<div class="cbp_tmlabel">
-							<h2>Ricebean black-eyed pea</h2>
-							<p>dfsdi.</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-13 05:36"><span>4/13/13</span> <span>05:36</span></time>
-						<div class="cbp_tmicon cbp_tmicon-mail"></div>
-						<div class="cbp_tmlabel">
-							<h2>Ricebean black-eyed pea</h2>
-							<p>sdfach.</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-15 13:15"><span>4/15/13</span> <span>13:15</span></time>
-						<div class="cbp_tmicon cbp_tmicon-phone"></div>
-						<div class="cbp_tmlabel">
-							<h2>Ricebean black-eyed pea</h2>
-							<p>sdfn shallot.</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-16 21:30"><span>4/16/13</span> <span>21:30</span></time>
-						<div class="cbp_tmicon cbp_tmicon-earth"></div>
-						<div class="cbp_tmlabel">
-							<h2>Ricebean black-eyed pea</h2>
-							<p>sdfetroot.</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-17 12:11"><span>4/17/13</span> <span>12:11</span></time>
-						<div class="cbp_tmicon cbp_tmicon-screen"></div>
-						<div class="cbp_tmlabel">
-							<h2>Ricebean black-eyed pea</h2>
-							<p>dffi.</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-18 09:56"><span>4/18/13</span> <span>09:56</span></time>
-						<div class="cbp_tmicon cbp_tmicon-phone"></div>
-						<div class="cbp_tmlabel">
-							<h2>Ricebean black-eyed pea</h2>
-							<p>fffach.</p>
-						</div>
-					</li> 
+					 
 				</ul>
 			</div>
 		</div> <!-- right-->

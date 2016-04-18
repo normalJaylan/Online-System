@@ -76,6 +76,7 @@ function showPersonInfo(name){
 			url:'myInfo.jsp?name=' + name,
 			success:function(data)
 			{
+			console.log(data);
 			   var person_data = JSON.parse(data);
 			   var person_data_span = "";
 			   $(".personInfo_table_ul li").eq(0).find("span").html(person_data['name']);
@@ -99,23 +100,22 @@ function showMyRecord(name){
 		url:'askRecord.jsp?name=' + name,
 		success:function(data)
 		{
-			alert(data);
+			console.log(data);
+			console.log(name);
 		   var record_data = JSON.parse(data);
 		   var record_data_table_tr = "";
 		   for(var i in record_data){
-                record_data_table_tr += "<tr>\
-											<td>"+ record_data[i]['name'] +"</td>\
-											<td>"+ record_data[i]['age'] +"</td>\
-											<td>"+ record_data[i]['sex'] +"</td>\
-											<td>"+ record_data[i]['profession'] +"</td>\
-											<td>"+ record_data[i]['phone'] +"</td>\
-											<td>"+ record_data[i]['table'] +"</td>\
-											<td>"+ record_data[i]['record'] +"</td>\
-											<td><a href=\""+ record_data[i]['path'] +"\">报告</a></td>\
-						                </tr>"
+                record_data_table_tr += "<li>\
+											<time class=\"cbp_tmtime\"><span>"+record_data[i]['month']+"/"+record_data[i]['day']+"/"+record_data[i]["year"]+"</span> <span>"+record_data[i]["hour"]+":"+record_data[i]["minute"]+"</span></time>\
+											<div class=\"cbp_tmicon cbp_tmicon-phone\"></div>\
+											<div class=\"cbp_tmlabel\">\
+												<h2>"+record_data[i]["name"]+"对"+name+"医生的咨询"+"</h2>\
+												<p>咨询表："+record_data[i]["table"]+"</p>\
+											</div>\
+										</li>"
 
 		    }
-		    $("#hor-minimalist-client>tbody").append(record_data_table_tr);
+		    $(".cbp_tmtimeline").append(record_data_table_tr);
 		}
 	 });
 
@@ -200,16 +200,7 @@ function upConsult(doctor,patient,chat_content,factor){
 $(document).ready(function(){
 	var input_text = "提交";
 	var class_name = ["name","age","telephone","education","mail"];
-	$('.my-slider').unslider({
-		dots: true, 
-	});
-	$('input').glDatePicker({
-	 showAlways: true,
-	 cssName: 'flatwhite',
-	 allowMonthSelect: false,
-	 allowYearSelect: false,
-	 
-	});
+	
 	$("#mydate").css("display","none");
 	$(".gldp-flatwhite").css({"display":"inline-block","margin-left":"50px","margin-top":"20px","position":"relative","top":"0","left":"0"})
 	$("#submit_report").submit(function(){

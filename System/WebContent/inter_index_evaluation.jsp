@@ -44,7 +44,7 @@
 					  <li id="consult"><a href="inter_index_consult.jsp"><i class="fa fa-user"></i>预约咨询</a></li>
 				</ul>
 			</div>
-			<table id="hor-minimalist-client" class="hor-minimalist" summary="Employee Pay Sheet">
+			<table id="hor-minimalist-client" class="hor-minimalist" summary="Employee Pay Sheet" style="margin-top: -30px;">
 					<thead>
 					     <tr>
 							<th scope="col">姓名</th>

@@ -78,6 +78,20 @@
 	<script src="assets/js/jquery-1.8.2.min.js"></script>
 	<script src="assets/js/unslider.js"></script>
 	<script src="assets/js/glDatePicker.min.js"></script>
-	<script src="assets/js/inter_index.js"></script>	
+	<script src="assets/js/inter_index.js"></script>
+	<script>
+	   $(document).ready(function(){
+		    $('.my-slider').unslider({
+				dots: true, 
+			});
+			$('input').glDatePicker({
+			 showAlways: true,
+			 cssName: 'flatwhite',
+			 allowMonthSelect: false,
+			 allowYearSelect: false,
+			 
+			});
+	   })
+	</script>	
 </body>
 </html>

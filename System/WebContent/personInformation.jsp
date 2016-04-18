@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8" %>
-<!DOCTYPE html>
-<head>
-	
+<html>
+<head>	
 	<title>个人信息</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
@@ -13,8 +12,10 @@
 	<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/inter_style.css" rel="stylesheet" type="text/css">	
 </head>
+
+
 <body>
-<%
+    <%
 		String name = session.getAttribute("name").toString();
 		session.setAttribute("name",name);
 	%>
@@ -38,17 +39,17 @@
                 <img src="assets/img/chat_img.png" style="border-radius: 50%;margin-left: 30px;height: 80px;width: 80px;">
                 <label>我就是一个普通的人，但是是不一样的烟火！</label>
 	            <ul class="personInfo_table_ul">
-	            	<li>姓名：<span>@name</span><button class="btnplayit">修改</button></li>
-	            	<li>年龄：<span>@age</span><button class="btnplayit">修改</button></li>
-	            	<li>电话：<span>@phone</span><button class="btnplayit">修改</button></li>
-	            	<li>职业：<span>@job</span><button class="btnplayit">修改</button></li>
-	            	<li>邮箱：<span>@Email</span><button class="btnplayit">修改</button></li>
+	            	<li>姓名：<span></span><button class="btnplayit">修改</button></li>
+	            	<li>年龄：<span></span><button class="btnplayit">修改</button></li>
+	            	<li>电话：<span></span><button class="btnplayit">修改</button></li>
+	            	<li>职业：<span></span><button class="btnplayit">修改</button></li>
+	            	<li>邮箱：<span></span><button class="btnplayit">修改</button></li>
 	            </ul>
             </div>	
 		</div> <!-- right-->
 	</div>
 	<script src="assets/js/jquery-1.8.2.min.js" ></script>
-	<script src="assets/js/inter_index.js"></script>\
+	<script src="assets/js/inter_index.js"></script>
 	<script type="text/javascript">
 		var name = '<%= name%>';
 		showPersonInfo(name);

@@ -2,7 +2,10 @@
     pageEncoding="utf-8"%>
 <html>
 <head>
-	
+	<%
+		String name = session.getAttribute("name").toString();
+		session.setAttribute("name",name);
+	%>
 	<title>报告中心</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
@@ -30,13 +33,15 @@
 		</div> <!-- left-->
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg right-container">
 			<h1 class="logo-right hidden-xs margin-bottom-60">咨询系统</h1>		
-			<div class="tm-right-inner-container">	</div>
+			<ul class="table_report_ul">
+				
+			</ul>
 		</div> <!-- right-->
 	</div>
 	<script src="assets/js/jquery-1.8.2.min.js"></script>
 	<script src="assets/js/report.js"></script>	
-	<script type="text/javascript">
-		test();
+	<script>
+	var name = '<%=name%>';
 	</script>
 </body>
 </html>

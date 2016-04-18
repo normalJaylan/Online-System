@@ -1,6 +1,6 @@
 * {	font-family: "HelveticaNeue", "Helvetica Neue", "微软雅黑",Helvetica, Arial, sans-serif; }
 
-html, body { height: 100%; min-width: 900px;}
+html, body { height: 100%; min-width: 1350px;}
 
 .green { color: #3B3; }
 .blue { color: #09E; }
@@ -14,10 +14,10 @@ ul li{list-style: none;}
 
 
 a,input,button,select,textarea{ outline:none;}
-a:link,a:visited,a:hover,a:active{text-decoration:none;}
+a:link,a:visited,a:hover,a:active{text-decoration:none;color: white;}
 textarea{ font-size:13px; resize:none;}
 
-
+p{padding: 0;}
 
 
 .templatemo-container {
@@ -332,6 +332,14 @@ float: left;}
     text-align: center;
     border-collapse: collapse;}
 
+
+@media screen and (min-width:1400px){
+	#hor-minimalist-client{
+	margin-top: 135px;
+	}
+}
+
+
 #hor-minimalist-client th{
     padding: 8px 2px;
     font-weight: normal;
@@ -501,7 +509,7 @@ float: left;}
 }
 
 
-.submit_answer:active{border-bottom: none;top: 4px;}
+.submit_answer:active{top: 4px;}
 
 .flt_rt{float: right;}
 
@@ -511,11 +519,17 @@ float: left;}
 -moz-column-width:160px;
 -o-colum-width:160px;
 column-width:160px;
-/* 两栏之间的间距 */
 -webkit-column-gap:82px;
 -moz-column-gap:82px;
 -o-column-gap:82px;
 column-gap:82px;}
+
+@media screen and (min-width:1400px){
+	.table_report_ul{
+   
+    margin-top: 135px;
+}
+}
 
 .table_report_ul>li{
     margin-bottom: 15px;
@@ -557,9 +571,9 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 .container{margin-left: -63px;}
 
 
-a:hover {
+/* a:hover {
     color: #000;
-}
+} */
 
 .main_record,.container > header {
     width: 95%;
@@ -864,3 +878,36 @@ a:hover {
     content:"动态";
         top: -263px;
 }
+
+
+/*boot_hand*/
+
+.boot_hand{    background-color: #e4644b;
+    border-top: 1px solid #d05942;
+    height: 48px;
+    color: #f7f1e3;
+    box-sizing: border-box;
+    position: relative;
+        display: block;
+    text-align: center;
+    padding-top: 10px;}
+        
+.boot_foot{    line-height: 20px;
+    padding-top: 11px;
+    background-color: #484141;
+    border-left: solid 6px #484141;
+    transition: border-left 220ms ease-in;
+	
+}
+
+.boot_foot p{       font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    padding: 5px 20px;}
+
+.expand-triangle{    background: url("../img/expand.gif") no-repeat;
+    background-size: 100% 100%;
+    height: 10px;
+    width: 35vw;
+    content: " ";
+    margin-left: 0px;}
